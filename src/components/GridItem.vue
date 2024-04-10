@@ -668,23 +668,23 @@
                 let out;
                 if (this.renderRtl) {
                     out = {
-                        right: Math.round(colWidth * x + (x + 1) * this.margin[0]),
-                        top: Math.round(this.rowHeight * y + (y + 1) * this.margin[1]),
+                        right: (colWidth + this.margin[0]) * x + this.margin[0] / 2 - 1,
+                        top: (this.rowHeight + this.margin[1]) * y + this.margin[1] / 2,
                         // 0 * Infinity === NaN, which causes problems with resize constriants;
                         // Fix this if it occurs.
                         // Note we do it here rather than later because Math.round(Infinity) causes deopt
-                        width: w === Infinity ? w : Math.round(colWidth * w + Math.max(0, w - 1) * this.margin[0]),
-                        height: h === Infinity ? h : Math.round(this.rowHeight * h + Math.max(0, h - 1) * this.margin[1])
+                        width: w === Infinity ? w : colWidth * w + Math.max(0, w - 1) * this.margin[0],
+                        height: h === Infinity ? h : this.rowHeight * h + Math.max(0, h - 1) * this.margin[1]
                     };
                 } else {
                     out = {
-                        left: Math.round(colWidth * x + (x + 1) * this.margin[0]),
-                        top: Math.round(this.rowHeight * y + (y + 1) * this.margin[1]),
+                        left: (colWidth + this.margin[0]) * x + this.margin[0] / 2 - 1,
+                        top: (this.rowHeight + this.margin[1]) * y + this.margin[1] / 2,
                         // 0 * Infinity === NaN, which causes problems with resize constriants;
                         // Fix this if it occurs.
                         // Note we do it here rather than later because Math.round(Infinity) causes deopt
-                        width: w === Infinity ? w : Math.round(colWidth * w + Math.max(0, w - 1) * this.margin[0]),
-                        height: h === Infinity ? h : Math.round(this.rowHeight * h + Math.max(0, h - 1) * this.margin[1])
+                        width: w === Infinity ? w : colWidth * w + Math.max(0, w - 1) * this.margin[0],
+                        height: h === Infinity ? h : this.rowHeight * h + Math.max(0, h - 1) * this.margin[1] 
                     };
                 }
 
@@ -719,7 +719,7 @@
             },
             // Helper for generating column width
             calcColWidth() {
-                const colWidth = (this.containerWidth - (this.margin[0] * (this.cols + 1))) / this.cols;
+                const colWidth = (this.containerWidth - (this.margin[0] * (this.cols))) / this.cols;
                // console.log("### COLS=" + this.cols + " COL WIDTH=" + colWidth + " MARGIN " + this.margin[0]);
                 return colWidth;
             },

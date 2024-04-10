@@ -184,11 +184,11 @@
                 responsive: true,
                 preventCollision: false,
                 compact: true,
-                rowHeight: 30,
-                colNum: 12,
+                rowHeight: 52,
+                colNum: 6,
                 index: 0,
-                marginX: 10,
-                marginY: 10,
+                marginX: 8,
+                marginY: 8,
             }
         },
         mounted: function () {
