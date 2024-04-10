@@ -1,6 +1,6 @@
 {
   "name": "blp-grid-layout",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A draggable and resizable grid layout,this is based on https://github.com/jbaysolutions/vue-grid-layout",
   "keywords": [
     "grid",
