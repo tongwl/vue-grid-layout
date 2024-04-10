@@ -668,7 +668,7 @@
                 let out;
                 if (this.renderRtl) {
                     out = {
-                        right: (colWidth + this.margin[0]) * x + this.margin[0] / 2 - 1,
+                        right: (colWidth + this.margin[0]) * x + this.margin[0] / 2,
                         top: (this.rowHeight + this.margin[1]) * y + this.margin[1] / 2,
                         // 0 * Infinity === NaN, which causes problems with resize constriants;
                         // Fix this if it occurs.
@@ -678,7 +678,7 @@
                     };
                 } else {
                     out = {
-                        left: (colWidth + this.margin[0]) * x + this.margin[0] / 2 - 1,
+                        left: (colWidth + this.margin[0]) * x + this.margin[0] / 2,
                         top: (this.rowHeight + this.margin[1]) * y + this.margin[1] / 2,
                         // 0 * Infinity === NaN, which causes problems with resize constriants;
                         // Fix this if it occurs.
